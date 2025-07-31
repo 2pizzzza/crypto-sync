@@ -2,11 +2,12 @@ package httpserver
 
 import (
 	"fmt"
-	"github.com/rs/cors"
 	"log/slog"
 	"net/http"
-	"github.com/2pizzzza/cryptosync/pkg/logger"
 
+	"github.com/2pizzzza/cryptosync/internal/config"
+	"github.com/2pizzzza/cryptosync/pkg/logger"
+	"github.com/rs/cors"
 )
 
 type Server struct {
@@ -15,7 +16,7 @@ type Server struct {
 	Mux *http.ServeMux
 }
 
-func New(log *slog.Logger, host string, port string) *Server {
+func New(log *slog.Logger, cfg *config.Config) *Server {
 	mux := http.NewServeMux()
 
 	corsHandler := cors.New(cors.Options{
@@ -30,7 +31,7 @@ func New(log *slog.Logger, host string, port string) *Server {
 	loggedMux := logger.LoggingMiddleware(log)(handler)
 
 	httpServer := &http.Server{
-		Addr:    fmt.Sprintf("%s:%s", host, port),
+		Addr:    fmt.Sprintf("%s:%s", cfg.App.Host, cfg.App.Port),
 		Handler: loggedMux,
 	}
 

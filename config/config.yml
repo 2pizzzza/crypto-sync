@@ -10,6 +10,6 @@ database:
   password: "postgres"
 
 log:
-  level: "dev"
+  level: "local"
 
   jwtSecret: "amdoifnrjkeworipalkdsfodjlam1o32pr0-imx2lp13o4ij2"
