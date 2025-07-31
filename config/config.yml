@@ -1,0 +1,15 @@
+app:
+  host: "127.0.0.1"
+  port: "8080"
+
+database:
+  host: "127.0.0.1"
+  port: "5432"
+  dbName: "test1"
+  username: "postgres"
+  password: "postgres"
+
+log:
+  level: "dev"
+
+  jwtSecret: "amdoifnrjkeworipalkdsfodjlam1o32pr0-imx2lp13o4ij2"
