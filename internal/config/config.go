@@ -14,8 +14,8 @@ type (
 	}
 
 	App struct {
-		Host    string `yaml:"host"`
-		Port    string `yaml:"port"`
+		Host string `yaml:"host"`
+		Port string `yaml:"port"`
 	}
 
 	Database struct {
@@ -29,8 +29,6 @@ type (
 	Log struct {
 		Level string `yaml:"level"`
 	}
-
-
 )
 
 func New() (*Config, error) {

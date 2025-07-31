@@ -5,8 +5,7 @@ import (
 	"github.com/2pizzzza/cryptosync/internal/config"
 )
 
-
-func main(){
+func main() {
 	cfg, err := config.New()
 	if err != nil {
 		panic(err)

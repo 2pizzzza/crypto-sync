@@ -4,8 +4,8 @@ import (
 	"context"
 	"log/slog"
 	"os"
-	"syscall"
 	"os/signal"
+	"syscall"
 
 	"github.com/2pizzzza/cryptosync/internal/config"
 	"github.com/2pizzzza/cryptosync/pkg/httpserver"
@@ -13,7 +13,7 @@ import (
 	"github.com/2pizzzza/cryptosync/pkg/postgres"
 )
 
-func New(cfg *config.Config){
+func New(cfg *config.Config) {
 	ctx := context.Background()
 	log := logger.New(cfg.Log.Level)
 
@@ -26,7 +26,7 @@ func New(cfg *config.Config){
 		application.Stop()
 	}
 
-		go application.MustRun()
+	go application.MustRun()
 
 	stop := make(chan os.Signal, 1)
 
