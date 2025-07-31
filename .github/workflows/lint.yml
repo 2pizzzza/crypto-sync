@@ -37,7 +37,7 @@ jobs:
         run: go mod tidy
 
       - name: Run linter
-        run: $(go env GOPATH)/bin/golangci-lint run ./...
+        run: $(go env GOPATH)/bin/golangci-lint run --modules-download-mode=vendor ./...
         env:
           GOLANGCI_LINT_CONCURRENCY: 4
 
